@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}Page 1 - Alarm Rings{% endblock %}
+
+{% block content %}
+    <h2>It is 8:00 AM in the morning, and your alarm goes off.</h2>
+    <form action="/game" method="GET">
+        <input type="radio" name="choices" value="Snooze"> Snooze, sleep for 5 more minutes<br>
+        <input type="radio" name="choices" value="Get up and head to the train station!"> Get up and head to the train station!<br>
+        <input type="submit" value="Next">
+    </form>
+{% endblock %}

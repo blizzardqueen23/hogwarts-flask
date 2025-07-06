@@ -1,0 +1,29 @@
+body {
+  background-image: url("harryback.jpg");
+  background-size: cover;
+  width: 500px;
+  text-align: center;
+  color: #d3e0f5;
+  font-family: "Lucia Handwriting";
+  font-variant: small-caps;
+  margin: 0 auto;
+}
+.landing {
+  font-size: 50px;
+}
+p {
+  font-size: 20px;
+  margin: 50px;
+}
+a:link, a:visited {
+  background-color: #d3e0f5;
+  color: #2b8494;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: #bfd3f2;
+}
