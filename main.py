@@ -106,28 +106,34 @@ def game():
                 'After you get out, Ms Mcgonagall catches you and… YOU WERE EXPELLED!</p>'
                 'The End...<br><a href="/">Try Again?</a>')
         return make_html('Wow…Rebel', body)
+    
+    if friend == '':
+        chosen_friend = random.choice(characters)
+        return redirect(url_for('game', friends=chosen_friend))
 
-    if choice == 'Send an owl to the Principal to get someone to come pick you up':
+    if choice == 'Send an owl to the Principal to get someone to come pick you up' or choice == 'Get up and head to the train station!':
         # PAGE4 - Hagrid arrives
         body = ('<h1>Meet Hagrid!</h1>\n'
                 '<p>Hagrid is sent to pick you up on his motorcycle. You get to school quickly in time for the big feast '
                 'and to witness the new coming wizards and witches!</p>'
-                '<a href="/game?friends=Neville+Longbottom">Time for the Feast!</a>')
+                f'<a href="/game?friends={friend}">Time for the Feast!</a>')
         return make_html('Meet Hagrid!', body)
 
     # PAGE5
+
+    
+
     if friend:
         # Choose a friend randomly (you had random.sample in CGI)
-        chosen_friend = random.choice(characters)
         body = ('<h1>On the Train</h1>\n'
                 '<p>On the train, your BFF is nowhere to be seen. You walk through, and all the compartments are filled, except for 1.</p>'
-                f"<p> You're forced to sit with {chosen_friend}. They quickly become your new friend."
+                f"<p> You're forced to sit with {friend}. They quickly become your new friend."
                 '<p>You talk for the remainder of the commute to Mugwarts Magical High School, and arrive at a big feast waiting for you.</p>'
-                '<a href="/game?friends=Neville+Longbottom">Time for the Feast!</a>')
+                f'<a href="/game?friends={friend}&choices=next6">Time for the Feast!</a>')
         return make_html('On the Train', body)
 
     # PAGE6
-    if friend and not house:
+    if friend and choice == "next6":
         question6 = "What house are you part of?(Hufflepuff doesn't exist for a reason.)"
         options6 = ['Gryffindor', 'Slytherin', 'Ravenclaw']
         body = '<h1>Time for a feast!</h1>'
