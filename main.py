@@ -320,6 +320,7 @@ def game():
                 'The End...<br><a href="/">Try Again?</a>')
         return make_html('No one remembers the password!', body)
 
+
     # PAGE26 (Waited too long)
     if choice == 'Wait for the victim to wake up':
         body = ('<h1>You Took too Long…</h1>'
